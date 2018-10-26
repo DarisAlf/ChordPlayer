@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1539523811 source:c:\users\alin\documents\c\chordplayer\main.c
+	<stdio.h>
+	<stdlib.h>
+	<Windows.h>
+	<mmsystem.h>
+	<string.h>
+
+1539597806 source:c:\users\daris\downloads\chordplayer\main.c
+	<stdio.h>
+	<stdlib.h>
+	<Windows.h>
+	<mmsystem.h>
+	<string.h>
+
