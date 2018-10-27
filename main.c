@@ -5,6 +5,7 @@
 
 //Sebelum di compile, Install MinGW dan compiler di codeblocks harus di reset. Di Linker settings tambahkan library "winmm"
 //mengasign array link ke project file dalam windows.h
+
 LPCTSTR chords[15] = {"No Sound" ,"C Major", "D Minor", "E Minor", "F Major", "G Major", "A Minor", "E Major",
                       "C Major Half", "D Minor Half", "E Minor Half", "F Major Half", "G Major Half", "A Minor Half", "E Major Half"};
 
@@ -21,24 +22,24 @@ int main()
     int errorchecker;
 
     printf("=========================================\n");
-    printf("Selamat Datang di Program ChordPlayer !!!\n");
+    printf("Welcome to the ChordPlayer Program   !!!!\n");
     printf("=========================================\n");
-    printf("\n\nTekan enter untuk melanjutkan...");
+    printf("\nPress Enter to Continue...");
     getchar();
     fflush(stdin);
     system("cls");
     printf("===================================================\n");
     printf("                   ChordPlayer\n");
     printf("===================================================\n\n");
-    printf("Silakan input berapa Bar yang ingin anda mainkan\n\nBar harus kelipatan 4 dan maksimal 32 bar\n\n");
-    printf("Jumlah bar: ");
+    printf("Input the number of bars that you want to play \n\nThe number of bars must be a multiply of 4 and less than 32\n\n");
+    printf("Number of Bars: ");
 
     while (bar = getInteger())
     {
         if (bar >= 0 && bar <= 32 && bar % 4 == 0)
             break;
         else
-            printf("Input tidak valid, mohon input ulang : ");
+            printf("Input is invalid, please re-enter : ");
     }
 
     printDisplay(progression, bar);
@@ -47,7 +48,7 @@ int main()
     {
         int chordNumber;
 
-        printf("Input Code:\n [1] C Major [8] 1/2 C Major\n [2] D Minor [9] 1/2 D Minor\n [3] E Minor [10] 1/2 E Minor\n [4] F Major [11] 1/2 F Major\n [5] G Major [12] 1/2 G Major\n [6] A Minor [13] 1/2 A Minor\n [7] E Major [14] 1/2 E Major\n\n");
+        printf("Input Code:\n [1] C Major [8] 1/2 C Major\n [2] D Minor [9] 1/2 D Minor\n [3] E Minor [10] 1/2 E Minor\n [4] F Major [11] 1/2 F Major\n [5] G Major [12] 1/2 G Major\n [6] A Minor [13] 1/2 A Minor\n [7] E Major [14] 1/2 E Major\n [0] No Sound\n\n");
         printf("Chord %d : ", j + 1);
 
         fflush(stdin);
@@ -58,7 +59,7 @@ int main()
                 if (chordNumber >= 0 && chordNumber <= 14)
                     break;
                 else
-                    printf("Masukkan Angka antara 8 sampai 14 : ");
+                    printf("Input is invalid, please re-enter : ");
             }
         }
         else
@@ -68,7 +69,7 @@ int main()
                 if (chordNumber >= 0 && chordNumber <= 14)
                     break;
                 else
-                    printf("Masukkan Angka antara 0 sampai 14 : ");
+                    printf("Input is invalid, please re-enter : ");
             }
         }
 
@@ -85,7 +86,7 @@ int main()
         printDisplay(progression, bar);
     }
 
-    printf("Memainkan: \n");
+    printf("Playing: \n");
 
     for (int i = 0; i < bar; i++)
     {
@@ -102,7 +103,7 @@ void printDisplay(int array[], int limit)
     printf("===================================================\n");
     printf("                   ChordPlayer\n");
     printf("===================================================\n\n");
-    printf("Progresi Sementara:\n");
+    printf("Chord Progression:\n");
 
     for (int k = 0; k < limit; ++k)
     {
@@ -150,7 +151,7 @@ int getInteger()
         number = strtol(str, &end, 10);
         if (end == str || *end != '\n')
         {
-            printf("Input tidak valid, mohon input ulang : ");
+            printf("Input is invalid, please re-enter : ");
         }
         else
             return number;
